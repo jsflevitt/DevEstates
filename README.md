@@ -2,8 +2,6 @@
 
 Database for visualizing and understanding the impacts of declared disasters on real estate prices
 
-One line description.
-
 [Link](#) to your presentation.
 
 <hr/>
