@@ -7,9 +7,11 @@ A database for visualizing and understanding the impacts of federal disasters on
 <hr/>
 
 ## Introduction
-Large disasters are known to depress real estate prices for months or years. Some areas recover quickly while others do not. This database is designed to assist home buyers and sellers, investors, and researchers in understanding past temporospatial trends in real estate pricing while enabling to make predictions in response to current and future events
+Large disasters are known to depress real estate prices for months or years. Some areas recover quickly while others do not. This database is designed to assist home buyers and sellers, investors, and researchers in understanding past temporospatial trends in real estate pricing while enabling them to make predictions regarding current and future events.
 
 ## Architecture
+An out line of the data pipeline architecture. Not every database requires geospark and so use only Apache Spark. The ETL cluster can be reconfigured to optimize the processing of the incoming data. Please see [EC2 Setups](https://github.com/jsflevitt/DevEstates/tree/master/Setup) for scripts and more details.
+
 ![Data Pipeline](https://github.com/jsflevitt/DevEstates/blob/master/images/DataPipelineOverview.png)
 
 ## Datasets
@@ -26,7 +28,7 @@ These consistute a small sample of what is available.
 - [Maryland Open Data](https://opendata.maryland.gov/Business-and-Economy/Maryland-Real-Property-Assessments-Hidden-Property/ed4q-f8tm)
 
 ### Disaster Data Sources:
-
+These Federal Databases contain both geospatial and impact data, but frequently provide less information on exact dates.
 #### Fire Perimeter Data
 - [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com)
 - [Monitoring Trends in Burn Severity](https://www.mtbs.gov/direct-download)
@@ -37,7 +39,7 @@ These consistute a small sample of what is available.
 ## Engineering challenges
 Challenges in creating this database came in two main areas:
 1. Working with the myriad different databases that store real estate sales and listing prices
-      1. Creating a unified data model to translate the variety of input data into
+      1. Creating a unified data model to connect the variety of data inputs
       2. Deploying customized ETL clusters to better handle varied data input sources
 2. Creating a database that works efficiently with data organized in both time and space
       1. A significant amount of preprocessing is done with geospark in order to speed up later database calls
