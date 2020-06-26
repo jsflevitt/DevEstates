@@ -37,8 +37,8 @@ These consistute a small sample of what is available.
 ## Engineering challenges
 Challenges in creating this database came in two main areas:
 1. Working with the myriad different databases that store real estate sales and listing prices
-      a. Creating a unified data model to translate the variety of input data into
-      b. Deploying customized ETL clusters to better handle varied data input sources
+      1. Creating a unified data model to translate the variety of input data into
+      2. Deploying customized ETL clusters to better handle varied data input sources
 2. Creating a database that works efficiently with data organized in both time and space
-      a. A significant amount of preprocessing is done with geospark in order to speed up later database calls
-      b. The database is deployed using both PostGIS and TimescaleDB to facilitate temporospatial indexing and deployment
+      1. A significant amount of preprocessing is done with geospark in order to speed up later database calls
+      2. The database is deployed using both PostGIS and TimescaleDB to facilitate temporospatial indexing and deployment
