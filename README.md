@@ -10,7 +10,7 @@ A database for visualizing and understanding the impacts of federal disasters on
 Large disasters are known to depress real estate prices for months or years. Some areas recover quickly while others do not. This database is designed to assist home buyers and sellers, investors, and researchers in understanding past temporospatial trends in real estate pricing while enabling them to make predictions regarding current and future events.
 
 ## Architecture
-An outline of the data pipeline architecture. Not every database requires geospark and utilize Apache Spark. The ETL cluster can be reconfigured to optimize the processing of the incoming data. Please see [EC2 Setups](https://github.com/jsflevitt/DevEstates/tree/master/Setup) for scripts and more details.
+An outline of the data pipeline architecture. Not every database requires geospark and therefore utilize Apache Spark. The ETL cluster can be reconfigured to optimize the processing of the incoming data. Please see [EC2 Setups](https://github.com/jsflevitt/DevEstates/tree/master/Setup) for scripts and more details.
 
 ![Data Pipeline](https://github.com/jsflevitt/DevEstates/blob/master/images/DataPipelineOverview.png)
 
