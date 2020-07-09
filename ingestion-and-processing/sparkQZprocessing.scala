@@ -21,8 +21,8 @@ val paths = Array[String](pathAH, pathFCO, pathFAH, pathFSF)
 val tableNames = Array[String]("allHomesQZ", "condosBySFQZ", "allHomesBySFQZ", "sfHomesBySFQZ")
 
 //	Cycle through the paths and write to the database
-for (i <- 0 to path.length() - 1) {
+for (i <- 0 until paths.length) {
 	spark.sqlContext.read.json(paths(i)).createOrReplaceTempView("fileData")
 	val inputDF = spark.sql("SELECT substring(dataset.dataset_code,2,5) AS zip_code, explode(dataset.data) AS day_price FROM fileData")
-	writer.writeDB(inputDF.select($"zip_code", to_date(element_at($"day_price",1)).as("date"), element_at($"day_price",2).as("price")), tablenames(i))
+	writer.writeDB(inputDF.select($"zip_code", to_date(element_at($"day_price",1)).as("date"), element_at($"day_price",2).as("price")), tableNames(i))
 }

@@ -195,7 +195,7 @@ sed -i -e 's/# - SPARK_MASTER_HOST, to bind the master to a different IP address
 cp /usr/local/spark/conf/slaves.template /usr/local/spark/conf/slaves;
 sed -i -e 's/localhost/$worker1PrivateIp/' -e '$ a $worker2PrivateIp' /usr/local/spark/conf/slaves;
 cp /usr/local/spark/conf/spark-defaults.conf.template /usr/local/spark/conf/spark-defaults.conf;
-sed -i -e 's/# spark.master/spark.master/1' -e 's/master:7077/$masterPublicDNS:7077/1' -e '$ a spark.jars = /usr/local/spark/jars/hadoop-aws-2.7.7.jar, /usr/local/spark/jars/aws-java-sdk-1.7.4.jar, /usr/local/spark/jars/spark-excel_2.11-0.13.1.jar, /usr/local/spark/jars/poi-4.1.2.jar, /usr/local/spark/jars/poi-ooxml-4.1.2.jar, /usr/local/spark/jars/poi-ooxml-schemas-4.1.2.jar, /usr/local/spark/jars/xmlbeans-3.1.0.jar' /usr/local/spark/conf/spark-defaults.conf;
+sed -i -e 's/# spark.master/spark.master/1' -e 's/master:7077/$masterPublicDNS:7077/1' -e '$ a spark.jars = /usr/local/spark/jars/hadoop-aws-2.7.7.jar, /usr/local/spark/jars/aws-java-sdk-1.7.4.jar, /usr/local/spark/jars/spark-excel_2.11-0.13.1.jar, /usr/local/spark/jars/poi-4.1.2.jar, /usr/local/spark/jars/poi-ooxml-4.1.2.jar, /usr/local/spark/jars/poi-ooxml-schemas-4.1.2.jar, /usr/local/spark/jars/xmlbeans-3.1.0.jar\nspark.executor.memory\t10g\nspark.executor.cores\t3\nspark.executor.instances\t2\spark.driver.cores\t3\nspark.driver.memory\t20g' /usr/local/spark/conf/spark-defaults.conf;
 exit
 "
 
